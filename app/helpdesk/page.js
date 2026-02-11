@@ -261,7 +261,7 @@ export default function HelpdeskPage() {
                   controls
                   poster="/CLOUDSPACE_BANNER.png"
                 >
-                  <source src="/IT_HELPDESK_SYSTEM_INTRODUCTION.mp4" type="video/mp4" />
+                  <source src="/IT_HELPDESK_SYSTEM.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
