@@ -34,7 +34,7 @@ const staggerContainer = {
 function FeatureCard({ feature }) {
   return (
     <div className=" bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl hover:shadow-[#3B6EDC]/10 transition-all duration-300 cursor-pointer h-full flex flex-col">
-      <div className="w-full h-38 bg-[#F5F5F5] overflow-hidden rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#4C5469] transition-colors duration-300">
+      <div className="w-full h-38 bg-[#F5F5F5] overflow-hidden rounded-xl rounded-b-none flex items-center justify-center mb-6 group-hover:bg-[#4C5469] transition-colors duration-300">
         <img src={feature.icon} />
       </div>
       <div className="p-4">
