@@ -131,7 +131,7 @@ export default function ChatPage() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-5xl font-bold text-[#1F2943] mb-6">
-                Smart, Organized Communication Made Easy
+                Built for Clear and Structured Communication
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Experience a streamlined workflow with our intuitive chat interface. 
@@ -239,7 +239,7 @@ export default function ChatPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-[#1F2943] mb-4">
               Transform Team Communication
             </h2>
-            <p className="text-gray-500 text-lg">Built for speed, security, and scale</p>
+            <p className="text-gray-500 text-lg">Designed for speed, security, and scalability.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
