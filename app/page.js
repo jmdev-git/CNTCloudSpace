@@ -232,6 +232,14 @@ export default function Home() {
             className="bg-white rounded-3xl shadow-xl overflow-hidden"
           >
             <div className="p-12 md:p-16 text-center space-y-8">
+              <div className="relative w-full h-64 mb-8 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                <Image 
+                  src="/Contacts.jpg" 
+                  alt="Contacts" 
+                  fill 
+                  className="object-cover"
+                />
+              </div>
               <div>
                 <h2 className="text-3xl font-bold text-[#1F2943] mb-4">Contacts</h2>
                 <p className="text-gray-600 max-w-2xl mx-auto">

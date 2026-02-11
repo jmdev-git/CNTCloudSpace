@@ -331,6 +331,14 @@ export default function ChatPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-10 md:p-16 text-center max-w-4xl mx-auto"
           >
+            <div className="relative w-full h-64 mb-8 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+              <Image 
+                src="/Contacts.jpg" 
+                alt="Contacts" 
+                fill 
+                className="object-cover"
+              />
+            </div>
             <h2 className="text-3xl font-bold text-[#1F2943] mb-4">Contacts</h2>
             <p className="text-gray-600 max-w-2xl mx-auto mb-10">
               Need help with CloudSpace Chat? Reach out to our IT support team.
