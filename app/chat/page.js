@@ -306,7 +306,7 @@ export default function ChatPage() {
           className="container px-6 mx-auto relative z-10"
         >
           <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400 mb-12 uppercase tracking-tight">
-            You can't scroll anymore.<br />Better go chat.
+            Your Team is Waiting.<br />Open CloudSpace Chat Today.
           </h2>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
