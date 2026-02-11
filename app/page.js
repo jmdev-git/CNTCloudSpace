@@ -208,7 +208,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1F2943] mb-8">Your Digital Workspace For Faster, Smarter and Safer Collaboration</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1F2943] mb-8">See CloudSpace in Action</h2>
             <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-[#F5F5F5] group">
               <video 
                 className="w-full h-full object-cover"
