@@ -241,7 +241,7 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-[#1F2943] mb-4">Contacts</h2>
+                <h2 className="text-3xl font-bold text-[#1F2943] mb-4">Support Center</h2>
                 <p className="text-gray-600 max-w-2xl mx-auto">
                   Our IT team is here to help! If you experience any issues accessing or using the IT Helpdesk System, please contact us at:
                 </p>
