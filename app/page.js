@@ -213,7 +213,7 @@ export default function Home() {
                 controls
                 poster="/CLOUDSPACE_BANNER.png"
               >
-                <source src="/CLOUDSPACE.mp4" type="video/mp4" />
+                <source src="/CLOUDSPACE.webm" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
