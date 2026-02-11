@@ -33,16 +33,18 @@ const staggerContainer = {
 
 function FeatureCard({ feature }) {
   return (
-    <div className="p-8 bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl hover:shadow-[#3B6EDC]/10 transition-all duration-300 cursor-pointer h-full flex flex-col">
-      <div className="w-14 h-14 bg-[#F5F5F5] rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#3B6EDC] transition-colors duration-300">
-        <feature.icon className="w-7 h-7 text-[#1F2943] group-hover:text-white transition-colors duration-300" />
+    <div className=" bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl hover:shadow-[#3B6EDC]/10 transition-all duration-300 cursor-pointer h-full flex flex-col">
+      <div className="w-full h-38 bg-[#F5F5F5] overflow-hidden rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#4C5469] transition-colors duration-300">
+        <img src={feature.icon} />
       </div>
-      <h3 className="text-xl font-bold mb-3 text-[#1F2943]">{feature.title}</h3>
+      <div className="p-4">
+        <h3 className="text-xl font-bold mb-3 text-[#1F2943]">{feature.title}</h3>
       <p className="text-gray-600 leading-relaxed text-sm mb-6 flex-grow">{feature.description}</p>
       
       <div className="flex items-center gap-2 text-[#3B6EDC] font-semibold text-sm group/btn">
         <span>Explore</span>
         <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+      </div>
       </div>
     </div>
   );
@@ -220,7 +222,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* 5️⃣ Contact Section */}
       <section className="py-24 bg-[#F5F5F5]">
         <div className="container px-6 mx-auto max-w-4xl">
@@ -280,23 +281,23 @@ const features = [
   {
     title: "Login to CloudSpace",
     description: "Sign in to access your cloud workspace and tools safely and securely.",
-    icon: Lock
+    icon: "/nas.gif"
   },
   {
     title: "IT Helpdesk",
     description: "Get support anytime—submit tickets, track updates, and access quick IT solutions.",
-    icon: LifeBuoy,
+    icon: "/document.gif",
     link: "/helpdesk"
   },
   {
     title: "CloudSpace Chat",
     description: "Real-time messaging, channels, DMs, and mentions, powered by our secure system.",
-    icon: MessageSquare,
+    icon: "/chat_gif.gif",
     link: "/chat"
   },
   {
     title: "Schedule IT Assistance",
     description: "Plan ahead and book an on-site visit, remote support, or a meeting for IT discussions.",
-    icon: Calendar
+    icon: "/calendar.gif"
   }
 ];
