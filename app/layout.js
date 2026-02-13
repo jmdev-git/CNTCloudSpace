@@ -20,7 +20,8 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
       </body>
-      <script src="https://cdn.jotfor.ms/agent/embedjs/019c55dbd73d73689bcf8cfa8216ac931889/embed.js"></script>
+      <script src='https://cdn.jotfor.ms/agent/embedjs/019c5669e36e7472a7a17710ba3757bc3a74/embed.js'>
+</script>
     </html>
   );
 }
