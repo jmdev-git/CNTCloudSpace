@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import {
   ArrowRight,
+  Rocket,
   CheckCircle,
   Clock,
   List,
@@ -39,19 +40,18 @@ const staggerContainer = {
 
 export default function HelpdeskPage() {
   return (
-    <main className="min-h-screen bg-white text-[#1F2943] font-sans overflow-x-hidden">
-      {/* 1️⃣ Hero Section */}
-      <section className="relative w-full py-24 md:py-32 text-white overflow-hidden flex items-center">
-        {/* Background GIF with Overlay */}
+    <main className="min-h-screen bg-[#1F2943] text-white font-sans overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="relative w-full py-24 overflow-hidden bg-[#1F2943]">
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/IT_Banner.gif" 
-            alt="IT Banner" 
-            fill 
-            className="object-cover"
+          <Image
+            src="/IT_Banner.gif"
+            alt="IT Support"
+            fill
+            className="object-cover opacity-20"
             priority
           />
-          <div className="absolute inset-0 bg-[#1F2943]/85 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1F2943]/60 via-[#1F2943]/90 to-[#1F2943]" />
         </div>
 
         <div className="container relative z-10 px-6 mx-auto">
@@ -59,275 +59,249 @@ export default function HelpdeskPage() {
             initial="initial"
             animate="animate"
             variants={staggerContainer}
-            className="max-w-4xl mx-auto space-y-8"
+            className="text-center mb-16"
           >
             <motion.h1
               variants={fadeIn}
-              className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight text-center"
+              className="text-5xl md:text-7xl font-black tracking-tighter leading-none mb-6"
             >
-              Welcome to the <br />
-              <span className="text-[#3B6EDC]">CNT IT Helpdesk System</span>
+              RESOLVE <span className="text-[#3B6EDC]">FAST.</span>
+              <br />
+              STAY PRODUCTIVE.
             </motion.h1>
 
             <motion.p
               variants={fadeIn}
-              className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl m-auto"
+              className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-medium tracking-tight mb-10"
             >
-              We make IT work, so you can focus on what really matters.
+              Centralized IT support to streamline your workflow and eliminate
+              downtime.
             </motion.p>
 
-            <motion.div variants={fadeIn} className="flex justify-center">
+            <motion.div
+              variants={fadeIn}
+              className="flex flex-col sm:flex-row justify-center gap-4"
+            >
               <a
-                href="#submit-ticket" // Placeholder link
-                className="inline-flex items-center gap-3 px-8 py-4 bg-[#3B6EDC] hover:bg-[#2f5bb5] text-white font-semibold rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-[#3B6EDC]/50 transform hover:-translate-y-1"
+                href="#submit-ticket"
+                className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#3B6EDC] hover:bg-[#2f5bb5] text-white font-black rounded-2xl text-xl transition-all duration-300 shadow-2xl hover:shadow-[#3B6EDC]/50 transform hover:-translate-y-1 uppercase tracking-tight"
               >
                 Submit a Ticket Now
-                <ArrowRight className="w-5 h-5" />
+                <Rocket className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </a>
+              <a
+                href="#how-to"
+                className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-black rounded-2xl text-xl transition-all duration-300 border border-white/20 uppercase tracking-tight"
+              >
+                How it Works
               </a>
             </motion.div>
           </motion.div>
-        </div>
-      </section>
 
-      {/* 2️⃣ About Section */}
-      <section className="py-20 bg-white">
-        <div className="container px-6 mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1F2943] mb-6">
-                What is the IT Helpdesk System?
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                The IT Helpdesk System is a centralized platform that
-                streamlines IT-related requests and issue resolution. It offers
-                a structured, user-friendly interface to report concerns,
-                request assistance, and track support tickets.
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="p-8 bg-[#F5F5F5] rounded-2xl border border-transparent hover:border-[#3B6EDC]/20 transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-[#3B6EDC] mb-6 shadow-sm">
-                  <feature.icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1F2943] mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 3️⃣ When to Use Section (IT Concerns) */}
-      <section className="py-20 bg-[#F5F5F5]">
-        <div className="container px-6 mx-auto">
+          {/* Core Concerns Grid - Integrated into Hero */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
+            variants={staggerContainer}
+            initial="initial"
+            animate="animate"
+            className="flex flex-wrap items-center justify-center gap-4 mt-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1F2943] mb-4">
-              When to Use the IT Helpdesk System?
-            </h2>
-            <p className="text-xl text-gray-500">
-              You can now submit tickets for the following IT concerns
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {concerns.map((concern, index) => (
+            {concerns.slice(0, 10).map((concern, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 flex items-start gap-4"
+                variants={fadeIn}
+                whileHover={{
+                  y: -5,
+                  backgroundColor: "rgba(255,255,255,0.15)",
+                }}
+                className="bg-white/5 w-64 backdrop-blur-md p-4 rounded-2xl border border-white/10 transition-all cursor-pointer group"
               >
-                <div className="shrink-0 p-3 bg-[#E6F0FF] rounded-lg text-[#3B6EDC]">
-                  <concern.icon className="w-6 h-6" />
+                <div className="w-10 h-10 bg-[#3B6EDC]/20 rounded-lg flex items-center justify-center text-[#3B6EDC] mb-3 group-hover:scale-110 transition-transform">
+                  <concern.icon className="w-5 h-5" />
                 </div>
-                <div>
-                  <h3 className="font-bold text-[#1F2943] mb-1">
-                    {concern.title}
-                  </h3>
-                  <p className="text-sm text-gray-600">{concern.description}</p>
-                </div>
+                <h3 className="font-bold text-sm text-white leading-tight">
+                  {concern.title}
+                </h3>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* 4️⃣ How to Access Section */}
-      <section className="py-20 bg-white">
+      {/* 2️⃣ High-Density Info Zone (Features + Access) */}
+      <section
+        id="how-to"
+        className="py-24 bg-[#1A2337] text-white border-y border-white/5"
+      >
         <div className="container px-6 mx-auto">
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
-            {/* Steps */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:w-1/2 space-y-8"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1F2943] mb-6">
-                How to Access the IT Helpdesk System?
-              </h2>
-
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="shrink-0 w-10 h-10 rounded-full bg-[#3B6EDC] text-white flex items-center justify-center font-bold">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-[#1F2943] mb-2">
-                      Portal Link
-                    </h3>
-                    <a
-                      href="#"
-                      className="text-[#3B6EDC] font-medium hover:underline flex items-center gap-2"
-                    >
-                      IT Helpdesk Portal <ExternalLink className="w-4 h-4" />
-                    </a>
-                    <p className="text-sm text-gray-500 mt-1">
-                      We recommend bookmarking this link.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="shrink-0 w-10 h-10 rounded-full bg-[#3B6EDC] text-white flex items-center justify-center font-bold">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-[#1F2943] mb-2">
-                      Login Details
-                    </h3>
-                    <p className="text-gray-600">
-                      Use your company email to sign in, submit requests, and
-                      track your tickets.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="shrink-0 w-10 h-10 rounded-full bg-[#3B6EDC] text-white flex items-center justify-center font-bold">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-[#1F2943] mb-2">
-                      Step-by-Step Walkthrough
-                    </h3>
-                    <p className="text-gray-600">
-                      Watch our IT Helpdesk Video Tutorial to get started
-                      quickly.
-                    </p>
-                  </div>
-                </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Left: Features */}
+            <div className="space-y-12">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 uppercase">
+                  Why use the portal?
+                </h2>
+                <div className="w-20 h-2 bg-[#3B6EDC] rounded-full" />
               </div>
-            </motion.div>
 
-            {/* Video Walkthrough */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:w-1/2 w-full"
-            >
-              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-[#F5F5F5] group">
-                <video 
+              <div className="grid gap-6">
+                {features.map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="flex gap-6 p-6 bg-white/5 backdrop-blur-md rounded-3xl border-b-4 border-[#3B6EDC] border-x border-t border-white/5"
+                  >
+                    <div className="shrink-0 w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10">
+                      <feature.icon className="w-7 h-7" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-black mb-2 text-white">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Access & Video */}
+            <div className="space-y-12">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 uppercase">
+                  Get Started Now
+                </h2>
+                <div className="w-20 h-2 bg-[#3B6EDC] rounded-full" />
+              </div>
+
+              <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-white/5 group">
+                <video
                   className="w-full h-full object-cover"
                   controls
                   poster="/CLOUDSPACE_BANNER.png"
                 >
                   <source src="/IT_HELPDESK_SYSTEM.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
                 </video>
+                <div className="absolute inset-0 bg-[#3B6EDC]/10 group-hover:bg-transparent transition-colors pointer-events-none" />
               </div>
-            </motion.div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10">
+                  <span className="text-4xl font-black text-[#3B6EDC]/20 mb-2 block">
+                    01
+                  </span>
+                  <h4 className="font-black text-lg mb-2 text-white uppercase">
+                    PORTAL LINK
+                  </h4>
+                  <a
+                    href="#"
+                    className="text-[#3B6EDC] font-bold hover:underline inline-flex items-center gap-2"
+                  >
+                    Access Portal <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+                <div className="p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10">
+                  <span className="text-4xl font-black text-[#3B6EDC]/20 mb-2 block">
+                    02
+                  </span>
+                  <h4 className="font-black text-lg mb-2 text-white uppercase">
+                    LOGIN
+                  </h4>
+                  <p className="text-gray-400 text-sm">
+                    Use your company email to sign in instantly.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 5️⃣ Contact Section */}
-      <section className="py-20 bg-[#F5F5F5]">
-        <div className="container px-6 mx-auto">
+      {/* 3️⃣ Support & Action Section */}
+      <section className="py-20 bg-[#1A2337] relative overflow-hidden">
+        {/* Background Decorative Pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+
+        <div className="container relative z-10 px-6 mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-3xl shadow-xl p-10 md:p-16 text-center max-w-4xl mx-auto"
+            className="bg-[#1F2943] rounded-[4rem] overflow-hidden shadow-[0_80px_150px_-30px_rgba(0,0,0,0.5)] flex flex-col lg:flex-row border border-white/5"
           >
-            <div className="relative w-full h-64 mb-8 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-              <Image 
-                src="/Contacts.jpg" 
-                alt="Contacts" 
-                fill 
-                className="object-cover"
+            <div className="lg:w-1/3 relative min-h-[300px] lg:min-h-full overflow-hidden">
+              <Image
+                src="/Contacts.jpg"
+                alt="Contacts"
+                fill
+                className="object-cover transition-all duration-1000 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#1F2943] via-transparent to-transparent lg:from-transparent" />
+              <div className="absolute inset-0 bg-[#3B6EDC]/10 mix-blend-overlay" />
             </div>
-            <h2 className="text-3xl font-bold text-[#1F2943] mb-4">Support Center</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-10">
-              Our IT team is here to help! If you experience any issues
-              accessing or using the IT Helpdesk System, please contact us at:
-            </p>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="flex flex-col items-center p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                <div className="w-12 h-12 bg-[#E6F0FF] rounded-full flex items-center justify-center text-[#3B6EDC] mb-4">
-                  <LifeBuoy className="w-6 h-6" />
-                </div>
-                <h4 className="font-bold text-[#1F2943] mb-1">
-                  Helpdesk Portal
-                </h4>
-                <a
-                  href="#"
-                  className="text-[#3B6EDC] text-sm font-medium hover:underline"
-                >
-                  Visit Portal
-                </a>
+            <div className="lg:w-2/3 p-10 md:p-12 space-y-8 flex flex-col justify-center">
+              <div className="space-y-3">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "40px" }}
+                  viewport={{ once: true }}
+                  className="h-1 bg-[#3B6EDC] rounded-full"
+                />
+                <h2 className="text-3xl md:text-5xl font-black text-white leading-none uppercase tracking-tighter">
+                  Instant <br />
+                  <span className="text-[#3B6EDC]">IT Support.</span>
+                </h2>
+                <p className="text-gray-400 text-base font-medium max-w-sm">
+                  Our team is standing by to resolve your technical challenges
+                  in seconds.
+                </p>
               </div>
 
-              <div className="flex flex-col items-center p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                <div className="w-12 h-12 bg-[#E6F0FF] rounded-full flex items-center justify-center text-[#3B6EDC] mb-4">
-                  <Mail className="w-6 h-6" />
-                </div>
-                <h4 className="font-bold text-[#1F2943] mb-1">Email Support</h4>
-                <a
-                  href="mailto:IT.support@cntpromoads.com"
-                  className="text-[#3B6EDC] text-sm font-medium hover:underline"
-                >
-                  IT.support@cntpromoads.com
-                </a>
-              </div>
-
-              <div className="flex flex-col items-center p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                <div className="w-12 h-12 bg-[#E6F0FF] rounded-full flex items-center justify-center text-[#3B6EDC] mb-4">
-                  <Phone className="w-6 h-6" />
-                </div>
-                <h4 className="font-bold text-[#1F2943] mb-1">Local Number</h4>
-                <p className="text-[#3B6EDC] text-sm font-medium">122</p>
+              <div className="grid gap-4">
+                {[
+                  {
+                    label: "Helpdesk Portal",
+                    value: "Submit Ticket",
+                    icon: Monitor,
+                  },
+                  {
+                    label: "Email Support",
+                    value: "IT.support@cntpromoads.com",
+                    icon: Mail,
+                  },
+                  { label: "Local Hotline", value: "Ext. 122", icon: Phone },
+                ].map((contact, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ x: 12 }}
+                    className="flex items-center gap-6 group cursor-pointer"
+                  >
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-[#3B6EDC] blur-lg opacity-0 group-hover:opacity-30 transition-opacity" />
+                      <div className="relative w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                        <contact.icon className="w-6 h-6" />
+                      </div>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] block mb-1">
+                        {contact.label}
+                      </span>
+                      <span className="text-white font-black text-xl tracking-tight group-hover:text-[#3B6EDC] transition-colors">
+                        {contact.value}
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </motion.div>
@@ -335,9 +309,10 @@ export default function HelpdeskPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#1F2943] text-white/60 py-8 text-center text-sm border-t border-white/10">
+      <footer className="bg-[#1F2943] text-white/40 py-10 text-center text-sm border-t border-white/5 uppercase tracking-widest font-bold">
         <p>
-          &copy; {new Date().getFullYear()} CNT CloudSpace. All rights reserved.
+          &copy; {new Date().getFullYear()} CNT CloudSpace // All rights
+          reserved
         </p>
       </footer>
     </main>
