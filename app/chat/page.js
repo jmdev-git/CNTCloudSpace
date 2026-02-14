@@ -84,14 +84,14 @@ export default function ChatPage() {
             
             <motion.div 
               variants={fadeIn}
-              className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
             >
-              <button className="group flex items-center justify-center gap-4 px-12 py-6 bg-[#3B6EDC] hover:bg-[#2f5bb5] text-white font-black rounded-2xl text-2xl transition-all duration-300 shadow-2xl hover:shadow-[#3B6EDC]/50 w-full sm:w-auto uppercase tracking-tighter transform hover:-translate-y-1">
-                <Download className="w-8 h-8 group-hover:scale-110 transition-transform" />
+              <button className="group flex items-center justify-center gap-3 px-10 py-5 bg-[#3B6EDC] hover:bg-[#2f5bb5] text-white font-black rounded-2xl text-xl transition-all duration-300 shadow-2xl hover:shadow-[#3B6EDC]/50 w-full sm:w-auto uppercase tracking-tight transform hover:-translate-y-1">
+                <Download className="w-6 h-6 group-hover:scale-110 transition-transform" />
                 Download for Windows
               </button>
-              <button className="group flex items-center justify-center gap-4 px-12 py-6 bg-white/10 hover:bg-white/20 text-white font-black rounded-2xl text-2xl transition-all duration-300 backdrop-blur-xl border border-white/20 w-full sm:w-auto uppercase tracking-tighter">
-                <Globe className="w-8 h-8 group-hover:scale-110 transition-transform" />
+              <button className="group flex items-center justify-center gap-3 px-10 py-5 bg-white/10 hover:bg-white/20 text-white font-black rounded-2xl text-xl transition-all duration-300 backdrop-blur-xl border border-white/20 w-full sm:w-auto uppercase tracking-tight">
+                <Globe className="w-6 h-6 group-hover:scale-110 transition-transform" />
                 Open in Browser
               </button>
             </motion.div>
@@ -193,7 +193,7 @@ export default function ChatPage() {
       </section>
 
       {/* 4️⃣ Final Action & Support */}
-      <section className="py-24 bg-[#1F2943]">
+      {/* <section className="py-24 bg-[#1F2943]">
         <div className="container px-6 mx-auto">
           <div className="bg-gradient-to-br from-[#1F2943] to-[#2a3a5a] rounded-[3rem] p-12 md:p-20 border border-white/10 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#3B6EDC]/10 rounded-full blur-[100px] -mr-48 -mt-48" />
@@ -239,10 +239,76 @@ export default function ChatPage() {
             </div>
           </div>
         </div>
+      </section> */}
+ {/* 4️⃣ High-Density Support */}
+      <section className="py-20 bg-[#1A2337] relative overflow-hidden">
+        {/* Background Decorative Pattern */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+        
+        <div className="container relative z-10 px-6 mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-[#1F2943] rounded-[4rem] overflow-hidden shadow-[0_80px_150px_-30px_rgba(0,0,0,0.5)] flex flex-col lg:flex-row border border-white/5"
+          >
+            <div className="lg:w-1/3 relative min-h-[300px] lg:min-h-full overflow-hidden">
+              <Image 
+                src="/Contacts.jpg" 
+                alt="Contacts" 
+                fill 
+                className="object-cover transition-all duration-1000 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#1F2943] via-transparent to-transparent lg:from-transparent" />
+              <div className="absolute inset-0 bg-[#3B6EDC]/10 mix-blend-overlay" />
+            </div>
+            
+            <div className="lg:w-2/3 p-10 md:p-12 space-y-8 flex flex-col justify-center">
+              <div className="space-y-3">
+                <motion.div 
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "40px" }}
+                  viewport={{ once: true }}
+                  className="h-1 bg-[#3B6EDC] rounded-full"
+                />
+                <h2 className="text-3xl md:text-5xl font-black text-white leading-none uppercase tracking-tighter">
+                  Instant <br/><span className="text-[#3B6EDC]">IT Support.</span>
+                </h2>
+                <p className="text-gray-400 text-base font-medium max-w-sm">Our team is standing by to resolve your technical challenges in seconds.</p>
+              </div>
+              
+              <div className="grid gap-4">
+                {[
+                  { label: "Helpdesk Portal", value: "Submit Ticket", icon: LifeBuoy },
+                  { label: "Email Support", value: "IT.support@cntpromoads.com", icon: Mail },
+                  { label: "Local Hotline", value: "Ext. 122", icon: Phone }
+                ].map((contact, i) => (
+                  <motion.div 
+                    key={i} 
+                    whileHover={{ x: 12 }}
+                    className="flex items-center gap-6 group cursor-pointer"
+                  >
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-[#3B6EDC] blur-lg opacity-0 group-hover:opacity-30 transition-opacity" />
+                      <div className="relative w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                        <contact.icon className="w-6 h-6" />
+                      </div>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] block mb-1">{contact.label}</span>
+                      <span className="text-white font-black text-xl tracking-tight group-hover:text-[#3B6EDC] transition-colors">{contact.value}</span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </section>
+      
 
       {/* Footer */}
-      <footer className="bg-[#1F2943] text-white/40 py-10 text-center text-sm border-t border-white/5 uppercase tracking-widest font-bold">
+      <footer className="bg-[#1A2337] text-white/40 py-10 text-center text-sm border-t border-white/5 uppercase tracking-widest font-bold">
         <p>&copy; {new Date().getFullYear()} CNT CloudSpace // All rights reserved</p>
       </footer>
     </main>

@@ -110,17 +110,20 @@ export default function HelpdeskPage() {
                 key={index}
                 variants={fadeIn}
                 whileHover={{
-                  y: -5,
+                  y: -8,
                   backgroundColor: "rgba(255,255,255,0.15)",
                 }}
-                className="bg-white/5 w-64 backdrop-blur-md p-4 rounded-2xl border border-white/10 transition-all cursor-pointer group"
+                className="bg-white/5 w-64 backdrop-blur-md p-6 rounded-2xl border border-white/10 transition-all duration-500 cursor-pointer group overflow-hidden"
               >
-                <div className="w-10 h-10 bg-[#3B6EDC]/20 rounded-lg flex items-center justify-center text-[#3B6EDC] mb-3 group-hover:scale-110 transition-transform">
-                  <concern.icon className="w-5 h-5" />
+                <div className="w-12 h-12 bg-[#3B6EDC]/20 rounded-xl flex items-center justify-center text-[#3B6EDC] mb-4 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                  <concern.icon className="w-6 h-6" />
                 </div>
-                <h3 className="font-bold text-sm text-white leading-tight">
+                <h3 className="font-black text-base text-white leading-tight mb-2 group-hover:text-[#3B6EDC] transition-colors duration-500">
                   {concern.title}
                 </h3>
+                <p className="text-gray-400 text-xs leading-relaxed opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-20 transition-all duration-500 font-medium">
+                  {concern.description}
+                </p>
               </motion.div>
             ))}
           </motion.div>

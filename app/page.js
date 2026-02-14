@@ -96,16 +96,16 @@ export default function Home() {
               
               <motion.p 
                 variants={fadeIn}
-                className="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto font-medium tracking-tight leading-relaxed"
+                className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto font-medium tracking-tight leading-relaxed"
               >
                 CNT CloudSpace: Secure collaboration, instant IT support, and seamless communication in one high-performance platform.
               </motion.p>
 
-              <motion.div variants={fadeIn} className="flex flex-wrap justify-center gap-6 pt-8">
-                <button className="group relative inline-flex items-center gap-4 px-12 py-6 bg-[#3B6EDC] hover:bg-[#2f5bb5] text-white font-black rounded-[2rem] text-2xl uppercase tracking-tighter transition-all duration-500 shadow-[0_20px_60px_rgba(59,110,220,0.4)] hover:scale-105 active:scale-95 overflow-hidden">
+              <motion.div variants={fadeIn} className="flex flex-wrap justify-center gap-4 pt-8">
+                <button className="group relative inline-flex items-center gap-3 px-10 py-5 bg-[#3B6EDC] hover:bg-[#2f5bb5] text-white font-black rounded-[2rem] text-xl uppercase tracking-tight transition-all duration-500 shadow-[0_20px_60px_rgba(59,110,220,0.4)] hover:scale-105 active:scale-95 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                   Launch App
-                  <Rocket className="w-8 h-8 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
+                  <Rocket className="w-6 h-6 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
                 </button>
               </motion.div>
             </motion.div>
