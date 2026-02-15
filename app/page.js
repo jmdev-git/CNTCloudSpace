@@ -172,26 +172,43 @@ export default function Home() {
                   Stop juggling multiple tools. CloudSpace integrates everything your department needs into a single, lightning-fast dashboard.
                 </p>
               </div>
-
-              <div className="grid grid-cols-2 gap-12">
-                <div className="space-y-2 group">
-                  <h4 className="text-5xl font-black text-[#3B6EDC] tracking-tighter group-hover:scale-110 transition-transform origin-left">500+</h4>
-                  <div className="w-12 h-1 bg-[#3B6EDC] rounded-full group-hover:w-20 transition-all" />
-                  <p className="text-gray-500 font-black uppercase tracking-[0.2em] text-[10px]">Active Users</p>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="flex gap-4 p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-colors">
+                  <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-[#3B6EDC] border border-white/10 shrink-0">
+                    <ShieldCheck className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-black text-sm uppercase tracking-tight text-white">Secure Access</h4>
+                    <p className="text-gray-400 text-xs">SSO and permissions built-in.</p>
+                  </div>
                 </div>
-                <div className="space-y-2 group">
-                  <h4 className="text-5xl font-black text-[#3B6EDC] tracking-tighter group-hover:scale-110 transition-transform origin-left">99.9%</h4>
-                  <div className="w-12 h-1 bg-[#3B6EDC] rounded-full group-hover:w-20 transition-all" />
-                  <p className="text-gray-400 font-black uppercase tracking-[0.2em] text-[10px]">Uptime Guarantee</p>
+                <div className="flex gap-4 p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-colors">
+                  <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-[#3B6EDC] border border-white/10 shrink-0">
+                    <LifeBuoy className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-black text-sm uppercase tracking-tight text-white">Instant Support</h4>
+                    <p className="text-gray-400 text-xs">Submit and track helpdesk tickets.</p>
+                  </div>
                 </div>
-              </div>
-
-              <div className="pt-8">
-                <button className="group relative inline-flex items-center gap-3 px-10 py-5 bg-white/5 text-white font-black rounded-2xl hover:bg-[#3B6EDC] transition-all duration-300 border border-white/10 uppercase tracking-tighter overflow-hidden">
-                  <span className="relative z-10">Explore Platform</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
-                  <div className="absolute inset-0 bg-[#3B6EDC] -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
-                </button>
+                <div className="flex gap-4 p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-colors">
+                  <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-[#3B6EDC] border border-white/10 shrink-0">
+                    <MessageSquare className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-black text-sm uppercase tracking-tight text-white">Team Chat</h4>
+                    <p className="text-gray-400 text-xs">Channels, DMs, and mentions.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4 p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-colors">
+                  <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-[#3B6EDC] border border-white/10 shrink-0">
+                    <Calendar className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-black text-sm uppercase tracking-tight text-white">Schedule Assistance</h4>
+                    <p className="text-gray-400 text-xs">Book on-site or remote support.</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
             
