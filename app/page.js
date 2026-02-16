@@ -1,21 +1,23 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  ArrowRight, 
+import {
+  ArrowRight,
   Rocket,
-  Cloud, 
-  Lock, 
-  MessageSquare, 
-  Calendar, 
-  LifeBuoy, 
-  Phone, 
-  Mail, 
+  Cloud,
+  Lock,
+  MessageSquare,
+  Calendar,
+  LifeBuoy,
+  Phone,
+  Mail,
   Monitor,
   ShieldCheck,
-  Users
+  Users,
+  ChevronDown
 } from "lucide-react";
 
 const fadeIn = {
@@ -49,6 +51,97 @@ function FeatureCard({ feature }) {
     </div>
   );
 }
+
+function FaqItem({ item }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <button
+      onClick={() => setOpen(!open)}
+      className={`w-full text-left rounded-2xl px-5 py-3 border transition-all duration-300 bg-[#1F2943] ${
+        open
+          ? "border-[#3B6EDC] shadow-[0_18px_45px_rgba(59,110,220,0.35)] bg-[#3B6EDC]/10"
+          : "border-white/10 hover:border-[#3B6EDC]/60 hover:bg-[#1F2943]/80"
+      }`}
+    >
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#3B6EDC]/15 border border-[#3B6EDC]/40 text-[11px] font-black text-[#3B6EDC]">
+            {item.id}
+          </div>
+          <div className="text-sm md:text-base font-black uppercase tracking-wide text-white">
+            {item.question}
+          </div>
+        </div>
+        <div className="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-white/5 border border-white/15 text-[#3B6EDC]">
+          <ChevronDown
+            className={`w-3.5 h-3.5 transition-transform duration-300 ${
+              open ? "rotate-180" : ""
+            }`}
+          />
+        </div>
+      </div>
+      {open && (
+        <div className="mt-3 border-t border-white/10 pt-3">
+          <p className="text-sm md:text-[15px] text-gray-300 leading-relaxed">
+            {item.answer}
+          </p>
+        </div>
+      )}
+    </button>
+  );
+}
+
+const faqs = [
+  {
+    id: 1,
+    question: "What is CNT CloudSpace?",
+    answer:
+      "CNT CloudSpace is a cloud-based platform that lets you communicate with your team, access IT support, and manage requests from one convenient online workspace. It is designed to save you time and make working with your company's IT team seamless and efficient.",
+  },
+  {
+    id: 2,
+    question: "Who can use CloudSpace?",
+    answer:
+      "Employees and team members of your company, as well as approved clients or partners, can use CloudSpace to submit IT requests, communicate with teams, or access resources. A company-provided account is required to log in.",
+  },
+  {
+    id: 3,
+    question: "How do I access CloudSpace?",
+    answer:
+      "Go to the CloudSpace portal, enter your username or email and password, and then use your dashboard to open chat, helpdesk tickets, and schedules. Once logged in, you can start submitting support requests or communicating with colleagues immediately.",
+  },
+  {
+    id: 4,
+    question: "What can I do in CloudSpace as a client?",
+    answer:
+      "You can submit IT requests, track support tickets, chat with teams, schedule remote or on-site assistance, and securely view files that have been shared with you.",
+  },
+  {
+    id: 5,
+    question: "How do I submit a support request?",
+    answer:
+      'Navigate to the Helpdesk section, click "New Ticket", fill in the problem type and description, and attach any screenshots if needed. Click Submit and keep your ticket number. You can check the status anytime under My Tickets.',
+  },
+  {
+    id: 6,
+    question: "Is CloudSpace safe to use?",
+    answer:
+      "Yes. CloudSpace uses secure login, role-based access, and encrypted communication so only authorized users can view your requests and shared files. Never share your password and report any suspicious activity immediately.",
+  },
+  {
+    id: 7,
+    question: "Can I communicate with my team in real time?",
+    answer:
+      "Yes. You can use channels for group projects or departments, direct messages for private conversations, and mentions to get someone's attention. Notifications help you stay on top of updates.",
+  },
+  {
+    id: 8,
+    question: "What types of support can I request and who can I contact?",
+    answer:
+      "You can request remote or on-site IT support, get consultation and guidance, and contact the IT team via ticket, email, or phone. Using CloudSpace gives you faster access to help, real-time updates on requests, organized communication, and secure sharing of information.",
+  },
+];
 
 export default function Home() {
   return (
@@ -179,7 +272,7 @@ export default function Home() {
         <div className="absolute top-0 right-0 w-1/3 h-full bg-[#3B6EDC]/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
         
         <div className="container relative z-10 px-6 mx-auto">
-          <div className="grid lg:grid-cols-2 gap-24 items-stretch">
+          <div className="grid lg:grid-cols-2 gap-24 items-start">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -194,41 +287,101 @@ export default function Home() {
                   Stop juggling multiple tools. CloudSpace integrates everything your department needs into a single, lightning-fast dashboard.
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="flex gap-4 p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-colors">
-                  <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-[#3B6EDC] border border-white/10 shrink-0">
-                    <ShieldCheck className="w-6 h-6" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="group flex flex-col items-start gap-3 p-5 hover:p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_28px_80px_-30px_rgba(0,0,0,0.8)]">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
+                    <div className="relative w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                      <Cloud className="w-6 h-6" />
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-black text-sm uppercase tracking-tight text-white">Secure Access</h4>
-                    <p className="text-gray-400 text-xs">SSO and permissions built-in.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4 p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-colors">
-                  <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-[#3B6EDC] border border-white/10 shrink-0">
-                    <LifeBuoy className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-black text-sm uppercase tracking-tight text-white">Instant Support</h4>
-                    <p className="text-gray-400 text-xs">Submit and track helpdesk tickets.</p>
+                  <div className="space-y-1">
+                    <h4 className="font-black text-sm uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
+                      Secure File Storage
+                    </h4>
+                    <p className="text-gray-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Central storage for your important company documents.
+                    </p>
                   </div>
                 </div>
-                <div className="flex gap-4 p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-colors">
-                  <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-[#3B6EDC] border border-white/10 shrink-0">
-                    <MessageSquare className="w-6 h-6" />
+                <div className="group flex flex-col items-start gap-3 p-5 hover:p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_28px_80px_-30px_rgba(0,0,0,0.8)]">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
+                    <div className="relative w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                      <LifeBuoy className="w-6 h-6" />
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-black text-sm uppercase tracking-tight text-white">Team Chat</h4>
-                    <p className="text-gray-400 text-xs">Channels, DMs, and mentions.</p>
+                  <div className="space-y-1">
+                    <h4 className="font-black text-sm uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
+                      Dedicated IT Support
+                    </h4>
+                    <p className="text-gray-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Reliable IT help with integrated ticket tracking.
+                    </p>
                   </div>
                 </div>
-                <div className="flex gap-4 p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-colors">
-                  <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-[#3B6EDC] border border-white/10 shrink-0">
-                    <Calendar className="w-6 h-6" />
+                <div className="group flex flex-col items-start gap-3 p-5 hover:p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_28px_80px_-30px_rgba(0,0,0,0.8)]">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
+                    <div className="relative w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                      <ShieldCheck className="w-6 h-6" />
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-black text-sm uppercase tracking-tight text-white">Schedule Assistance</h4>
-                    <p className="text-gray-400 text-xs">Book on-site or remote support.</p>
+                  <div className="space-y-1">
+                    <h4 className="font-black text-sm uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
+                      Automatic Backup
+                    </h4>
+                    <p className="text-gray-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Automatic backups to keep your work protected.
+                    </p>
+                  </div>
+                </div>
+                <div className="group flex flex-col items-start gap-3 p-5 hover:p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_28px_80px_-30px_rgba(0,0,0,0.8)]">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
+                    <div className="relative w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                      <Users className="w-6 h-6" />
+                    </div>
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="font-black text-sm uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
+                      Easy File Sharing
+                    </h4>
+                    <p className="text-gray-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Share files and folders with your team securely.
+                    </p>
+                  </div>
+                </div>
+                <div className="group flex flex-col items-start gap-3 p-5 hover:p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_28px_80px_-30px_rgba(0,0,0,0.8)]">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
+                    <div className="relative w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                      <MessageSquare className="w-6 h-6" />
+                    </div>
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="font-black text-sm uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
+                      Built-in Chat &amp; Messaging
+                    </h4>
+                    <p className="text-gray-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Real-time chat with channels, DMs, and mentions.
+                    </p>
+                  </div>
+                </div>
+                <div className="group flex flex-col items-start gap-3 p-5 hover:p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_28px_80px_-30px_rgba(0,0,0,0.8)]">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
+                    <div className="relative w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                      <Monitor className="w-6 h-6" />
+                    </div>
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="font-black text-sm uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
+                      Anywhere Access
+                    </h4>
+                    <p className="text-gray-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Secure access on any device, wherever you are.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -238,16 +391,43 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative h-full min-h-[260px] max-w-4xl mx-auto lg:mx-0"
+              className="relative max-w-4xl mx-auto lg:mx-0"
             >
               <div className="absolute -inset-10 bg-[#3B6EDC]/20 rounded-full blur-[80px] opacity-50 animate-pulse" />
-              <div className="relative h-full rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] border-[8px] border-white/10 group cursor-pointer">
-                <video className="w-full h-full object-cover" controls poster="/CLOUDSPACE_BANNER.png">
+              <div className="relative w-full h-[600px] aspect-[16/9] rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] border-[8px] border-white/10 group cursor-pointer">
+                <video className="w-full h-full object-cover" controls autoPlay muted playsInline poster="/CLOUDSPACE_BANNER.png">
                   <source src="/CLOUDSPACE.webm" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-[#3B6EDC]/10 group-hover:bg-transparent transition-colors pointer-events-none" />
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-10 bg-[#1A2337] border-y border-white/5">
+        <div className="container px-6 mx-auto">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              <motion.h2
+                variants={fadeIn}
+                className="text-3xl md:text-4xl font-black text-white tracking-tight"
+              >
+                FAQs – CNT CloudSpace
+              </motion.h2>
+              <motion.p
+                variants={fadeIn}
+                className="text-sm md:text-base text-gray-400 mt-2 max-w-2xl mx-auto"
+              >
+                Quick answers to the most common questions about using CloudSpace as a client or employee.
+              </motion.p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {faqs.map((item) => (
+                <FaqItem key={item.id} item={item} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -335,7 +515,7 @@ const features = [
   {
     title: "Request IT Support",
     description: "Get support anytime—submit tickets, track updates, and access quick IT solutions.",
-    icon: "/document.gif",
+    icon: "/helpdesk.gif",
     link: "/helpdesk"
   },
   {
@@ -345,7 +525,7 @@ const features = [
     link: "/chat"
   },
   {
-    title: "Temporary Equipment Access",
+    title: "Temporary Access",
     description: "Request and track borrowing of IT equipment and other shared resources.",
     icon: "/calendar.gif"
   }

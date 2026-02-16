@@ -235,6 +235,9 @@ export default function HelpdeskPage() {
                 <video
                   className="w-full h-full object-cover"
                   controls
+                  autoPlay
+                  muted
+                  playsInline
                   poster="/CLOUDSPACE_BANNER.png"
                 >
                   <source src="/IT_HELPDESK_SYSTEM.mp4" type="video/mp4" />
