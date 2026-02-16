@@ -98,7 +98,7 @@ export default function Home() {
                 variants={fadeIn}
                 className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto font-medium tracking-tight leading-relaxed"
               >
-                CNT CloudSpace: Secure collaboration, instant IT support, and seamless communication in one high-performance platform.
+                Your Digital Workspace for faster, smarter, and safer collaboration.
               </motion.p>
 
               <motion.div variants={fadeIn} className="flex flex-wrap justify-center gap-4 pt-8">
@@ -113,8 +113,30 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-12 bg-[#1A2337] border-y border-white/5">
+        <div className="container px-6 mx-auto">
+          <div className="max-w-3xl mx-auto text-center space-y-4">
+            <motion.h2
+              variants={fadeIn}
+              className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter"
+            >
+              What is the CNT CloudSpace?
+            </motion.h2>
+            <motion.p
+              variants={fadeIn}
+              className="text-base md:text-lg text-gray-400 leading-relaxed font-medium"
+            >
+              CNT CloudSpace is a comprehensive, secure, and cloud-based digital workspace designed
+              to streamline communication, collaboration, and file management within the CNT
+              organization. It integrates essential IT tools and services, offering employees
+              seamless access to resources and enhancing productivity.
+            </motion.p>
+          </div>
+        </div>
+      </section>
+
       {/* 2️⃣ Features Grid */}
-      <section id="features" className="py-20 bg-[#1A2337] border-y border-white/5 relative overflow-hidden">
+      <section id="features" className="py-14 bg-[#1A2337] border-y border-white/5 relative overflow-hidden">
         <div className="container px-6 mx-auto relative z-10">
           <div className="text-center mb-16">
             <motion.h2 
@@ -152,12 +174,12 @@ export default function Home() {
       </section>
 
       {/* 3️⃣ Compact Video & Proof Combo */}
-      <section className="py-20 bg-[#1A2337] text-white relative overflow-hidden border-y border-white/5">
+      <section className="py-16 bg-[#1A2337] text-white relative overflow-hidden border-y border-white/5">
         {/* Decorative background element */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-[#3B6EDC]/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
         
         <div className="container relative z-10 px-6 mx-auto">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-24 items-stretch">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -216,10 +238,10 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative max-w-4xl mx-auto lg:mx-0"
+              className="relative h-full min-h-[260px] max-w-4xl mx-auto lg:mx-0"
             >
               <div className="absolute -inset-10 bg-[#3B6EDC]/20 rounded-full blur-[80px] opacity-50 animate-pulse" />
-              <div className="relative aspect-video rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] border-[8px] border-white/10 group cursor-pointer">
+              <div className="relative h-full rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] border-[8px] border-white/10 group cursor-pointer">
                 <video className="w-full h-full object-cover" controls poster="/CLOUDSPACE_BANNER.png">
                   <source src="/CLOUDSPACE.webm" type="video/mp4" />
                 </video>
@@ -231,18 +253,18 @@ export default function Home() {
       </section>
 
       {/* 4️⃣ High-Density Support */}
-      <section className="py-20 bg-[#1A2337] relative overflow-hidden">
+      <section className="py-10 bg-[#1A2337] relative overflow-hidden">
         {/* Background Decorative Pattern */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
         
-        <div className="container relative z-10 px-6 mx-auto">
+        <div className="container relative z-10 px-4 mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-[#1F2943] rounded-[4rem] overflow-hidden shadow-[0_80px_150px_-30px_rgba(0,0,0,0.5)] flex flex-col lg:flex-row border border-white/5"
+            className="bg-[#1F2943] rounded-[2.5rem] overflow-hidden shadow-[0_50px_110px_-35px_rgba(0,0,0,0.6)] flex flex-col lg:flex-row border border-white/5"
           >
-            <div className="lg:w-1/3 relative min-h-[300px] lg:min-h-full overflow-hidden">
+            <div className="lg:w-1/3 relative min-h-[220px] lg:min-h-full overflow-hidden">
               <Image 
                 src="/Contacts.jpg" 
                 alt="Contacts" 
@@ -253,7 +275,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-[#3B6EDC]/10 mix-blend-overlay" />
             </div>
             
-            <div className="lg:w-2/3 p-10 md:p-12 space-y-8 flex flex-col justify-center">
+            <div className="lg:w-2/3 p-8 md:p-10 space-y-6 flex flex-col justify-center">
               <div className="space-y-3">
                 <motion.div 
                   initial={{ width: 0 }}
@@ -261,32 +283,32 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="h-1 bg-[#3B6EDC] rounded-full"
                 />
-                <h2 className="text-3xl md:text-5xl font-black text-white leading-none uppercase tracking-tighter">
+                <h2 className="text-2xl md:text-4xl font-black text-white leading-tight uppercase tracking-tighter">
                   Instant <br/><span className="text-[#3B6EDC]">IT Support.</span>
                 </h2>
-                <p className="text-gray-400 text-base font-medium max-w-sm">Our team is standing by to resolve your technical challenges in seconds.</p>
+                <p className="text-gray-400 text-sm font-medium max-w-sm">Our team is standing by to resolve your technical challenges in seconds.</p>
               </div>
               
-              <div className="grid gap-4">
+              <div className="grid gap-3">
                 {[
                   { label: "Helpdesk Portal", value: "Submit Ticket", icon: Monitor },
-                  { label: "Email Support", value: "IT.support@cntpromoads.com", icon: Mail },
+                  { label: "Email Support", value: "help@itcntpromoads.on.spiceworks.com", icon: Mail },
                   { label: "Local Hotline", value: "Ext. 122", icon: Phone }
                 ].map((contact, i) => (
                   <motion.div 
                     key={i} 
-                    whileHover={{ x: 12 }}
-                    className="flex items-center gap-6 group cursor-pointer"
+                    whileHover={{ x: 8 }}
+                    className="flex items-center gap-4 group cursor-pointer"
                   >
                     <div className="relative">
-                      <div className="absolute inset-0 bg-[#3B6EDC] blur-lg opacity-0 group-hover:opacity-30 transition-opacity" />
-                      <div className="relative w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
-                        <contact.icon className="w-6 h-6" />
+                      <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
+                      <div className="relative w-11 h-11 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                        <contact.icon className="w-5 h-5" />
                       </div>
                     </div>
                     <div>
-                      <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] block mb-1">{contact.label}</span>
-                      <span className="text-white font-black text-xl tracking-tight group-hover:text-[#3B6EDC] transition-colors">{contact.value}</span>
+                      <span className="text-[9px] font-black text-gray-500 uppercase tracking-[0.18em] block mb-0.5">{contact.label}</span>
+                      <span className="text-white font-black text-lg tracking-tight group-hover:text-[#3B6EDC] transition-colors">{contact.value}</span>
                     </div>
                   </motion.div>
                 ))}
@@ -311,7 +333,7 @@ const features = [
     icon: "/nas.gif"
   },
   {
-    title: "IT Helpdesk",
+    title: "Request IT Support",
     description: "Get support anytime—submit tickets, track updates, and access quick IT solutions.",
     icon: "/document.gif",
     link: "/helpdesk"
@@ -323,8 +345,8 @@ const features = [
     link: "/chat"
   },
   {
-    title: "Schedule IT Assistance",
-    description: "Plan ahead and book an on-site visit, remote support, or a meeting for IT discussions.",
+    title: "Temporary Equipment Access",
+    description: "Request and track borrowing of IT equipment and other shared resources.",
     icon: "/calendar.gif"
   }
 ];

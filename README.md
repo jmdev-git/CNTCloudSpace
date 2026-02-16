@@ -14,7 +14,26 @@
 *   **3-Second Impact:** Everything you need, exactly where you expect it.
 *   **High Performance:** Optimized for speed and seamless departmental access.
 *   **Total Security:** Enterprise-grade encryption for all your communication and files.
-*   **Modern UI:** Intuitive design using a professional `#1F2943` & `#3B6EDC` palette.
+*   **Modern UI:** Intuitive design built on a consistent color system.
+
+---
+
+### 🎨 Color Palette
+
+| Role | Color | Hex |
+| :--- | :---- | :-- |
+| **Primary Background** | Deep Navy | `#1F2943` |
+| **Section Background** | Midnight Blue | `#1A2337` |
+| **Primary Accent** | CNT Blue | `#3B6EDC` |
+| **Accent Hover** | Darker CNT Blue | `#2F5BB5` |
+| **Surface Card** | Translucent Slate | `rgba(255,255,255,0.05)` (`bg-white/5`) |
+| **Card Border** | Subtle Border | `rgba(255,255,255,0.10)` (`border-white/10`) |
+| **Dividers** | Soft Border | `rgba(255,255,255,0.05)` (`border-white/5`) |
+| **Text – Primary** | White | `#FFFFFF` |
+| **Text – Muted** | Gray | Tailwind `text-gray-400` |
+| **Glow / Highlights** | CNT Blue Glow | `rgba(59,110,220,0.1–0.3)` (`bg-[#3B6EDC]/10`, `bg-[#3B6EDC]/20`) |
+
+These colors are used across Home, Helpdesk, and Chat pages for backgrounds, buttons, borders, and highlights to keep the experience visually consistent.
 
 ---
 
