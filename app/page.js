@@ -433,18 +433,18 @@ export default function Home() {
       </section>
 
       {/* 4️⃣ High-Density Support */}
-      <section className="py-10 bg-[#1A2337] relative overflow-hidden">
+      <section className="bg-[#1A2337] relative overflow-hidden">
         {/* Background Decorative Pattern */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)'}} />
         
-        <div className="container relative z-10 px-4 mx-auto">
+        <div className="relative z-10 py-3">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-[#1F2943] rounded-[2.5rem] overflow-hidden shadow-[0_50px_110px_-35px_rgba(0,0,0,0.6)] flex flex-col lg:flex-row border border-white/5"
+            className="bg-[#1F2943] overflow-hidden shadow-[0_50px_110px_-35px_rgba(0,0,0,0.6)] flex flex-col lg:flex-row border border-white/5"
           >
-            <div className="lg:w-1/3 relative min-h-[220px] lg:min-h-full overflow-hidden">
+            <div className="lg:w-1/2 relative min-h-[220px] lg:min-h-full overflow-hidden">
               <Image 
                 src="/Contacts.jpg" 
                 alt="Contacts" 
@@ -464,7 +464,7 @@ export default function Home() {
                   className="h-1 bg-[#3B6EDC] rounded-full"
                 />
                 <h2 className="text-2xl md:text-4xl font-black text-white leading-tight uppercase tracking-tighter">
-                  Instant <br/><span className="text-[#3B6EDC]">IT Support.</span>
+                  Instant <span className="text-[#3B6EDC]">IT Support.</span>
                 </h2>
                 <p className="text-gray-400 text-sm font-medium max-w-sm">Our team is standing by to resolve your technical challenges in seconds.</p>
               </div>
