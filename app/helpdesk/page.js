@@ -290,83 +290,71 @@ export default function HelpdeskPage() {
         </div>
       </section>
 
-      <section className="py-10 bg-[#1F2943] relative overflow-hidden">
-        {/* Background Decorative Pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{
-            backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-
-        <div className="container relative z-10 px-4 mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col lg:flex-row items-stretch gap-10"
-          >
-            <div className="lg:w-1/3 relative min-h-[220px] lg:min-h-[260px] overflow-hidden rounded-[2.5rem] border border-white/10 shadow-[0_40px_100px_-40px_rgba(0,0,0,0.9)]">
-              <Image
-                src="/Contacts.jpg"
-                alt="Contacts"
-                fill
-                className="object-cover transition-all duration-1000 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#1F2943] via-transparent to-transparent lg:from-transparent" />
-              <div className="absolute inset-0 bg-[#3B6EDC]/10 mix-blend-overlay" />
+     {/* 4️⃣ High-Density Support */}
+          <section className="bg-[#1A2337] relative overflow-hidden">
+            {/* Background Decorative Pattern */}
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)'}} />
+            
+            <div className="relative z-10 py-6">
+              <motion.div 
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-[#1F2943] overflow-hidden shadow-[0_50px_110px_-35px_rgba(0,0,0,0.6)] flex flex-col lg:flex-row border border-white/5"
+              >
+                <div className="lg:w-1/2 relative min-h-[220px] lg:min-h-full overflow-hidden">
+                  <Image 
+                    src="/Contacts.jpg" 
+                    alt="Contacts" 
+                    fill 
+                    className="object-cover transition-all duration-1000 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#1F2943] via-transparent to-transparent lg:from-transparent" />
+                  <div className="absolute inset-0 bg-[#3B6EDC]/10 mix-blend-overlay" />
+                </div>
+                
+                <div className="lg:w-2/3 p-8 md:p-10 space-y-6 flex flex-col justify-center">
+                  <div className="space-y-3">
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "40px" }}
+                      viewport={{ once: true }}
+                      className="h-1 bg-[#3B6EDC] rounded-full"
+                    />
+                    <h2 className="text-2xl md:text-4xl font-black text-white leading-tight uppercase tracking-tighter">
+                      Instant <span className="text-[#3B6EDC]">IT Support.</span>
+                    </h2>
+                    <p className="text-gray-400 text-sm font-medium max-w-sm">Our team is standing by to resolve your technical challenges in seconds.</p>
+                  </div>
+                  
+                  <div className="grid gap-3">
+                    {[
+                      { label: "Helpdesk Portal", value: "Submit Ticket", icon: Monitor },
+                      { label: "Email Support", value: "help@itcntpromoads.on.spiceworks.com", icon: Mail },
+                      { label: "Local Hotline", value: "Ext. 122", icon: Phone }
+                    ].map((contact, i) => (
+                      <motion.div 
+                        key={i} 
+                        whileHover={{ x: 8 }}
+                        className="flex items-center gap-4 group cursor-pointer"
+                      >
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
+                          <div className="relative w-11 h-11 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                            <contact.icon className="w-5 h-5" />
+                          </div>
+                        </div>
+                        <div>
+                          <span className="text-[9px] font-black text-gray-500 uppercase tracking-[0.18em] block mb-0.5">{contact.label}</span>
+                          <span className="text-white font-black text-lg tracking-tight group-hover:text-[#3B6EDC] transition-colors">{contact.value}</span>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
             </div>
-
-            <div className="lg:w-2/3 space-y-6 flex flex-col justify-center">
-              <div className="space-y-3">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "40px" }}
-                  viewport={{ once: true }}
-                  className="h-1 bg-[#3B6EDC] rounded-full"
-                />
-                <h2 className="text-2xl md:text-4xl font-black text-white leading-tight uppercase tracking-tighter">
-                  Instant <br />
-                  <span className="text-[#3B6EDC]">IT Support.</span>
-                </h2>
-                <p className="text-gray-400 text-sm font-medium max-w-md">
-                  Our team is standing by to resolve your technical challenges in seconds.
-                </p>
-              </div>
-
-              <div className="grid gap-3">
-                {[
-                  { label: "Helpdesk Portal", value: "Submit Ticket", icon: Monitor },
-                  { label: "Email Support", value: "help@itcntpromoads.on.spiceworks.com", icon: Mail },
-                  { label: "Local Hotline", value: "Ext. 122", icon: Phone },
-                ].map((contact, i) => (
-                  <motion.div
-                    key={i}
-                    whileHover={{ x: 8 }}
-                    className="flex items-center gap-4 group cursor-pointer"
-                  >
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
-                      <div className="relative w-11 h-11 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
-                        <contact.icon className="w-5 h-5" />
-                      </div>
-                    </div>
-                    <div>
-                      <span className="text-[9px] font-black text-gray-500 uppercase tracking-[0.18em] block mb-0.5">
-                        {contact.label}
-                      </span>
-                      <span className="text-white font-black text-lg tracking-tight group-hover:text-[#3B6EDC] transition-colors">
-                        {contact.value}
-                      </span>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+          </section>
 
       {/* Footer */}
       <footer className="bg-[#1F2943] text-white/40 py-10 text-center text-sm border-t border-white/5 uppercase tracking-widest font-bold">

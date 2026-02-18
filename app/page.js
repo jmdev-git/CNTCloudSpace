@@ -287,99 +287,99 @@ export default function Home() {
                   Stop juggling multiple tools. CloudSpace integrates everything your department needs into a single, lightning-fast dashboard.
                 </p>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="group flex flex-col items-start gap-3 p-5 hover:p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_28px_80px_-30px_rgba(0,0,0,0.8)]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="group flex flex-col items-start gap-1.5 px-4 py-3 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.8)]">
                   <div className="relative">
                     <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
-                    <div className="relative w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
-                      <Cloud className="w-6 h-6" />
+                    <div className="relative w-9 h-9 bg-white/5 rounded-xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                      <Cloud className="w-4 h-4" />
                     </div>
                   </div>
-                  <div className="space-y-1">
-                    <h4 className="font-black text-sm uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
+                  <div className="space-y-0.5">
+                    <h4 className="font-black text-[11px] md:text-xs uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
                       Secure File Storage
                     </h4>
-                    <p className="text-gray-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-gray-400 text-[11px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Central storage for your important company documents.
                     </p>
                   </div>
                 </div>
-                <div className="group flex flex-col items-start gap-3 p-5 hover:p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_28px_80px_-30px_rgba(0,0,0,0.8)]">
+                <div className="group flex flex-col items-start gap-1.5 px-4 py-3 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.8)]">
                   <div className="relative">
                     <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
-                    <div className="relative w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
-                      <LifeBuoy className="w-6 h-6" />
+                    <div className="relative w-9 h-9 bg-white/5 rounded-xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                      <LifeBuoy className="w-4 h-4" />
                     </div>
                   </div>
-                  <div className="space-y-1">
-                    <h4 className="font-black text-sm uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
+                  <div className="space-y-0.5">
+                    <h4 className="font-black text-[11px] md:text-xs uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
                       Dedicated IT Support
                     </h4>
-                    <p className="text-gray-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-gray-400 text-[11px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Reliable IT help with integrated ticket tracking.
                     </p>
                   </div>
                 </div>
-                <div className="group flex flex-col items-start gap-3 p-5 hover:p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_28px_80px_-30px_rgba(0,0,0,0.8)]">
+                <div className="group flex flex-col items-start gap-1.5 px-4 py-3 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.8)]">
                   <div className="relative">
                     <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
-                    <div className="relative w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
-                      <ShieldCheck className="w-6 h-6" />
+                    <div className="relative w-9 h-9 bg-white/5 rounded-xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                      <ShieldCheck className="w-4 h-4" />
                     </div>
                   </div>
-                  <div className="space-y-1">
-                    <h4 className="font-black text-sm uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
+                  <div className="space-y-0.5">
+                    <h4 className="font-black text-[11px] md:text-xs uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
                       Automatic Backup
                     </h4>
-                    <p className="text-gray-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-gray-400 text-[11px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Automatic backups to keep your work protected.
                     </p>
                   </div>
                 </div>
-                <div className="group flex flex-col items-start gap-3 p-5 hover:p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_28px_80px_-30px_rgba(0,0,0,0.8)]">
+                <div className="group flex flex-col items-start gap-1.5 px-4 py-3 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.8)]">
                   <div className="relative">
                     <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
-                    <div className="relative w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
-                      <Users className="w-6 h-6" />
+                    <div className="relative w-9 h-9 bg-white/5 rounded-xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                      <Users className="w-4 h-4" />
                     </div>
                   </div>
-                  <div className="space-y-1">
-                    <h4 className="font-black text-sm uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
+                  <div className="space-y-0.5">
+                    <h4 className="font-black text-[11px] md:text-xs uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
                       Easy File Sharing
                     </h4>
-                    <p className="text-gray-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-gray-400 text-[11px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Share files and folders with your team securely.
                     </p>
                   </div>
                 </div>
-                <div className="group flex flex-col items-start gap-3 p-5 hover:p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_28px_80px_-30px_rgba(0,0,0,0.8)]">
+                <div className="group flex flex-col items-start gap-1.5 px-4 py-3 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.8)]">
                   <div className="relative">
                     <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
-                    <div className="relative w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
-                      <MessageSquare className="w-6 h-6" />
+                    <div className="relative w-9 h-9 bg-white/5 rounded-xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                      <MessageSquare className="w-4 h-4" />
                     </div>
                   </div>
-                  <div className="space-y-1">
-                    <h4 className="font-black text-sm uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
+                  <div className="space-y-0.5">
+                    <h4 className="font-black text-[11px] md:text-xs uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
                       Built-in Chat &amp; Messaging
                     </h4>
-                    <p className="text-gray-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-gray-400 text-[11px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Real-time chat with channels, DMs, and mentions.
                     </p>
                   </div>
                 </div>
-                <div className="group flex flex-col items-start gap-3 p-5 hover:p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_28px_80px_-30px_rgba(0,0,0,0.8)]">
+                <div className="group flex flex-col items-start gap-1.5 px-4 py-3 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-[#3B6EDC]/5 transition-all duration-300 overflow-hidden hover:-translate-y-1 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.8)]">
                   <div className="relative">
                     <div className="absolute inset-0 bg-[#3B6EDC] blur-md opacity-0 group-hover:opacity-30 transition-opacity" />
-                    <div className="relative w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
-                      <Monitor className="w-6 h-6" />
+                    <div className="relative w-9 h-9 bg-white/5 rounded-xl flex items-center justify-center text-[#3B6EDC] border border-white/10 group-hover:bg-[#3B6EDC] group-hover:text-white transition-all duration-500">
+                      <Monitor className="w-4 h-4" />
                     </div>
                   </div>
-                  <div className="space-y-1">
-                    <h4 className="font-black text-sm uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
+                  <div className="space-y-0.5">
+                    <h4 className="font-black text-[11px] md:text-xs uppercase tracking-tight text-white group-hover:text-[#3B6EDC] transition-colors">
                       Anywhere Access
                     </h4>
-                    <p className="text-gray-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-gray-400 text-[11px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Secure access on any device, wherever you are.
                     </p>
                   </div>
@@ -437,7 +437,7 @@ export default function Home() {
         {/* Background Decorative Pattern */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)'}} />
         
-        <div className="relative z-10 py-3">
+        <div className="relative z-10 py-6">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
