@@ -17,7 +17,8 @@ import {
   Monitor,
   ShieldCheck,
   Users,
-  ChevronDown
+  ChevronDown,
+  ChevronRight
 } from "lucide-react";
 
 const fadeIn = {
@@ -42,12 +43,11 @@ function FeatureCard({ feature }) {
       </div>
       <h3 className="text-xl font-black mb-2 text-white uppercase tracking-tighter leading-none">{feature.title}</h3>
       <p className="text-gray-400 text-sm leading-snug mb-6 flex-grow font-medium">{feature.description}</p>
-      
-      <div className="flex items-center gap-3 text-[#3B6EDC] font-black text-[10px] uppercase tracking-[0.2em] group/btn">
+
+      <button className="inline-flex items-center cursor-pointer gap-2 px-4 py-2 rounded-full bg-[#3B6EDC] justify-center font-black text-[0.8rem] tracking-tight border border-[#3B6EDC]/40 group/btn hover:bg-[#3B6EDC] hover:text-white transition-all duration-300">
         <span>Get Started</span>
-        <div className="w-8 h-[2px] bg-[#3B6EDC]/30 group-hover/btn:w-12 transition-all duration-500" />
-        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform" />
-      </div>
+        <ChevronRight className="size-6 group-hover/btn:translate-x-1 transition-transform" />
+      </button>
     </div>
   );
 }
@@ -509,7 +509,7 @@ export default function Home() {
 const features = [
   {
     title: "Login to CloudSpace",
-    description: "Sign in to access your cloud workspace and tools safely and securely.",
+    description: "Sign in to access your cloud workspace and tools safely and securely anytime, anywhere.",
     icon: "/nas.gif"
   },
   {
@@ -525,7 +525,7 @@ const features = [
     link: "/chat"
   },
   {
-    title: "Temporary Access",
+    title: "Borrowing IT Equipment",
     description: "Request and track borrowing of IT equipment and other shared resources.",
     icon: "/calendar.gif"
   }
